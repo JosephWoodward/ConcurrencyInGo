@@ -23,7 +23,7 @@ func main() {
 		cond.L.Lock()
 		for len(queue) == 2 {
 			fmt.Println("Waiting...")
-			cond.Wait()
+			cond.Wait() // wait atomically unlocks cond.L and suspends the goroutine
 		}
 		fmt.Println("Adding to queue")
 		queue = append(queue, struct{}{})
