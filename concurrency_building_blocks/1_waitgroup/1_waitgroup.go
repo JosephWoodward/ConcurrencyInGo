@@ -8,6 +8,7 @@ import (
 
 func main() {
 
+	// WaitGroups are for fanning in
 	var wg sync.WaitGroup
 
 	wg.Add(1)
